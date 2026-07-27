@@ -125,6 +125,14 @@ gtag('config', 'GOOGLE_ID_BURAYA');
     border:1px solid rgba(255,255,255,.2);
     padding:6px 12px;border-radius:20px;color:#fff;
   }
+  .nav-pill{
+    font-size:12px;padding:6px 14px;border-radius:20px;text-decoration:none;font-weight:600;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;
+    transition:background .15s;
+  }
+  .nav-pill.active{
+    background:var(--gold);color:var(--navy-deep);border:1px solid var(--gold);font-weight:700;
+  }
 
   /* HERO */
   .hero{
@@ -431,6 +439,28 @@ gtag('config', 'GOOGLE_ID_BURAYA');
     .filter-card{grid-template-columns:1fr 1fr;}
     .hero h1{font-size:28px;}
   }
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+  .proj-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+  .proj-photo{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--paper);}
+  .proj-ribbon{
+    display:inline-block;background:var(--gold);color:var(--navy-deep);font-size:10.5px;font-weight:800;
+    letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin:12px 14px 0;
+  }
+  .proj-spec{font-size:15px;font-weight:700;color:var(--navy);padding:8px 14px 4px;font-family:'Fraunces',serif;}
+  .proj-note{font-size:12.5px;color:var(--muted);padding:0 14px 14px;line-height:1.5;}
+  .proj-btn{
+    display:flex;align-items:center;justify-content:center;gap:7px;margin:0 14px 16px;
+    background:#25D366;color:#fff;padding:11px 14px;border-radius:6px;font-size:13px;font-weight:700;
+    text-decoration:none;
+  }
+  .proj-empty-placeholder{
+    background:var(--paper);width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:12px;text-align:center;padding:16px;
+  }
+  .proj-intro-note{
+    margin-bottom:28px;padding:14px 16px;background:#FFF7E6;border:1px solid #F0DDA6;border-radius:6px;
+    font-size:12.5px;color:#8A6416;line-height:1.6;
+  }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -464,8 +494,9 @@ gtag('config', 'GOOGLE_ID_BURAYA');
     </div>
   </div>
   <div style="display:flex;align-items:center;gap:10px;">
-    <a href="hakkimda.html" class="office-pill" style="text-decoration:none;">📖 Kariyer Geçmişim</a>
-    <a href="tek-yetkili-projeler.html" class="office-pill" style="text-decoration:none;background:var(--gold);color:var(--navy-deep);border:none;font-weight:700;">🔑 Tek Yetkili Projeler</a>
+    <a href="#" class="nav-pill">🏠 Ana Sayfa</a>
+    <a href="#kariyer-gecmisim" class="nav-pill">📖 Kariyer Geçmişim</a>
+    <a href="#tek-yetkili-projeler" class="nav-pill">🔑 Tek Yetkili Projeler</a>
     <div class="office-pill">Denizli Yenişehir · İzmir Karşıyaka</div>
   </div>
 </header>
@@ -621,6 +652,47 @@ gtag('config', 'GOOGLE_ID_BURAYA');
         </div>
       </div>
 
+      <div class="about-eyebrow" id="kariyer-gecmisim">Kariyer Geçmişim</div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1996</div>
+        <div class="timeline-text">Gündüzleri inşaat sektöründe çalışırken, akşamları Makine Mühendisliği eğitimime devam ettim.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2001</div>
+        <div class="timeline-text">Isısan A.Ş., Demateknik ve Özel Isı gibi firmalarda ısıtma-soğutma sektörüne adım attım.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2005</div>
+        <div class="timeline-text">Askerlik görevimin ardından makine mühendisliği çalışmalarımın yanında proje ve ruhsat işlerinde yer aldım.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-text">Doğalgazın bölgeye gelmesiyle Fetih Doğalgaz Ltd. Şti.'yi kurdum.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-text">Emlak danışmanlığı eğitimimi tamamlayarak gayrimenkul sektörüne ilk adımımı attım.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2020</div>
+        <div class="timeline-text">Sultan Yapı Market olarak hizmet vermeye başladım.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-text">Sultan Yapı Market ve Doğalgaz çatısı altında doğalgaz taahhüt, tesisat ve proje hizmetlerine devam ettim.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-text">Realty World Safir Gayrimenkul'de premium ofis deneyimiyle emlak sektöründe portföy alım-satım ve kiralama süreçlerinde hız kazandım.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-text">Coldwell Banker Platinum Gayrimenkul Ofisi bünyesinde faaliyetlerime devam ediyorum.</div>
+      </div>
+    </div>
+
+
       <div class="about-eyebrow">Uzmanlık Alanlarım</div>
       <div class="specialty-grid">
         <div class="specialty-item"><span class="num">01</span> Kat Karşılığı Projeler</div>
@@ -633,6 +705,38 @@ gtag('config', 'GOOGLE_ID_BURAYA');
         🤖 <span><strong>7/24 Sanal Asistan:</strong> Satış, kiralama veya yeni portföy kazanımı için sanal asistanım üzerinden benimle iletişime geçebilir, randevu talebinde bulunabilirsiniz.</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="about-section" id="tek-yetkili-projeler" style="margin-top:0;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="about-eyebrow">Tek Yetkili Projelerimiz</div>
+    <div style="font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin-bottom:6px;">Sadece Bizim Aracılığımızla Sunulan Portföyler</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:20px;">Sadece bizim aracılığımızla satışa veya kiralamaya sunulan, tek yetkili temsilcisi olduğumuz portföyler.</div>
+    <div class="proj-grid">
+    
+    <div class="proj-card">
+      <div class="proj-empty-placeholder">📷 Fotoğraf<br>yüklenecek</div>
+      <div class="proj-ribbon">Tek Yetkili</div>
+      <div class="proj-spec">Selçukbey Projesi</div>
+      <div class="proj-note">Selçukbey, Denizli</div>
+      <a href="https://wa.me/905339257880?text=Merhaba%2C%20Sel%C3%A7ukbey%20Projesi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20alabilir%20miyim%3F" target="_blank" class="proj-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.8c2.19 0 4.25.85 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.25-4.35c0-4.52 3.68-8.19 8.2-8.19zm4.52 10.42c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.57-1.36-.78-1.87-.2-.48-.42-.42-.57-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.06s.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg> Detaylı Bilgi Alabilir miyim?</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-empty-placeholder">📷 Fotoğraf<br>yüklenecek</div>
+      <div class="proj-ribbon">Tek Yetkili</div>
+      <div class="proj-spec">Yenişehir Projesi</div>
+      <div class="proj-note">Yenişehir, Denizli</div>
+      <a href="https://wa.me/905339257880?text=Merhaba%2C%20Yeni%C5%9Fehir%20Projesi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20alabilir%20miyim%3F" target="_blank" class="proj-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.8c2.19 0 4.25.85 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.25-4.35c0-4.52 3.68-8.19 8.2-8.19zm4.52 10.42c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.57-1.36-.78-1.87-.2-.48-.42-.42-.57-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.06s.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg> Detaylı Bilgi Alabilir miyim?</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-empty-placeholder">📷 Fotoğraf<br>yüklenecek</div>
+      <div class="proj-ribbon">Tek Yetkili</div>
+      <div class="proj-spec">Merkezefendi Projesi</div>
+      <div class="proj-note">Merkezefendi, Denizli</div>
+      <a href="https://wa.me/905339257880?text=Merhaba%2C%20Merkezefendi%20Projesi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20alabilir%20miyim%3F" target="_blank" class="proj-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.8c2.19 0 4.25.85 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.25-4.35c0-4.52 3.68-8.19 8.2-8.19zm4.52 10.42c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.57-1.36-.78-1.87-.2-.48-.42-.42-.57-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.06s.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg> Detaylı Bilgi Alabilir miyim?</a>
+    </div>
+  </div>
   </div>
 </section>
 
