@@ -737,7 +737,7 @@ gtag('config', 'GOOGLE_ID_BURAYA');
   </div>
   <div class="brochure-cta">
     <h3>Bir Sonraki Mutlu Müşterimiz Siz Olun</h3>
-    <p>Yukarıdaki her fotoğraf, gerçek bir aile veya işletme için yeni bir başlangıcın hikayesi. Sıradaki hikaye sizinki olsun — portföyünüzü yerinde değerlendirmemiz için bugün WhatsApp'tan yazın veya bizi arayın.</p>
+    <p>Yukarıdaki her fotoğraf, gerçek bir aile veya işletme için yeni bir başlangıcın hikayesi. Sıradaki hikaye sizinki olsun — portföyünüzün değerlemesini yapmamız için bugün WhatsApp'tan yazın veya bizi arayın.</p>
     <div class="brochure-cta-buttons">
       <a class="brochure-btn wa" href="#" onclick="openValuation();return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.8c2.19 0 4.25.85 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.25-4.35c0-4.52 3.68-8.19 8.2-8.19zm4.52 10.42c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.57-1.36-.78-1.87-.2-.48-.42-.42-.57-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.06s.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg> Hemen İletişime Geç</a>
       <a class="brochure-btn call" href="tel:+905339257880">📞 Hemen Ara</a>
@@ -780,6 +780,13 @@ function openValuation(){
 function closeValuation(){
   document.getElementById('valuationModal').classList.remove('open');
 }
+
+// ============================================
+// OFİS KONUM BİLGİSİ — otomatik mesajlarda kullanılır
+// ============================================
+const OFFICE_ADDRESS = "Yenişehir Mahallesi 13 Sk. Ferah Evler No:41 Kapı No:20040, Merkezefendi/Denizli";
+const OFFICE_MAPS_LINK = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Yenişehir Mahallesi 13 Sk. Ferah Evler No:41, Merkezefendi Denizli");
+
 // ============================================
 // n8n WEBHOOK AYARI
 // n8n'de webhook kurunca URL'i buraya yapıştır.
@@ -879,7 +886,9 @@ function sendBuyerConfirmationEmail(data){
     emlak_tipi: data.propType,
     bolge: data.region || 'Belirtilmedi',
     oda_sayisi: data.rooms || 'Farketmez',
-    butce: data.budget || 'Belirtilmedi'
+    butce: data.budget || 'Belirtilmedi',
+    ofis_adres: OFFICE_ADDRESS,
+    ofis_harita: OFFICE_MAPS_LINK
   }).catch(function(err){ console.log('EmailJS gönderilemedi:', err); });
 }
 
@@ -893,7 +902,9 @@ function sendSellerConfirmationEmail(data){
     emlak_tipi: data.propType,
     bolge: data.location || 'Belirtilmedi',
     oda_sayisi: data.rooms || 'Belirtilmedi',
-    butce: 'Değerleme talebi'
+    butce: 'Değerleme talebi',
+    ofis_adres: OFFICE_ADDRESS,
+    ofis_harita: OFFICE_MAPS_LINK
   }).catch(function(err){ console.log('EmailJS gönderilemedi:', err); });
 }
 
@@ -1112,7 +1123,7 @@ function renderEntries(){
     <button class="modal-close" onclick="closeValuation()">✕</button>
 
     <div id="valuationFormView">
-      <h3>Mülkünüzü Değerlendirelim</h3>
+      <h3>Mülkünüzün Değerlemesini Yapalım</h3>
       <div class="modal-sub">Birkaç bilgi verin, size özel WhatsApp mesajınızı hazırlayalım. Fatih en kısa sürede dönüş yapacaktır.</div>
 
       <div class="admin-field">
@@ -1241,7 +1252,11 @@ function renderEntries(){
   </div>
 </div>
 
-<div style="text-align:center;padding:24px 0 40px;">
+<div style="text-align:center;padding:24px 0 8px;">
+  <a href="https://www.google.com/maps/search/?api=1&query=Yeni%C5%9Fehir%20Mahallesi%2013%20Sk.%20Ferah%20Evler%20No%3A41%2C%20Merkezefendi%20Denizli" target="_blank" style="color:var(--muted);font-size:12px;text-decoration:none;">📍 Ofisimizi Ziyaret Edin — Yenişehir Mah. 13 Sk. Ferah Evler No:41, Merkezefendi/Denizli</a>
+</div>
+
+<div style="text-align:center;padding:0 0 40px;">
   <span onclick="openAdmin()" style="cursor:pointer;color:#B8BFC7;font-size:11px;text-decoration:underline;">Yönetim</span>
 </div>
 
